@@ -15,14 +15,14 @@ This project is a simple system of inventory management.
 
 ## Structure
 
-|
-| --- `models`
-|        |
-|        ---- `product.py` 
-|
-| --- `main.py`
-| --- `.gitignore`
-| --- `README.md`
+| <br>
+| --- `models` <br>
+|        | <br>
+|        ---- `product.py` <br>
+|<br>
+| --- `main.py` <br>
+| --- `.gitignore` <br>
+| --- `README.md` <br>
 
 ## Requeriments
 
