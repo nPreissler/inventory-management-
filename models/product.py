@@ -6,4 +6,4 @@ class Product:
         self._quantity = quantity
         self._prod_id = str(randint(0,9999))
     def __str__(self) -> str:
-        return f'Name : {self._product} | Qtd : {self._quantity} | ID : {self._prod_id}'
+        return f'Name : {self._product.ljust(30)} | Qtd : {self._quantity.ljust(30)} | ID : {self._prod_id.ljust(30)}'
