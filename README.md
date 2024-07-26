@@ -16,9 +16,7 @@ This project is a simple system of inventory management.
 ## Structure
 
 | <br>
-| --- `models` <br>
-|        | <br>
-|        ---- `product.py` <br>
+| --- `models` /  --- `product.py` <br>
 |<br>
 | --- `main.py` <br>
 | --- `.gitignore` <br>
