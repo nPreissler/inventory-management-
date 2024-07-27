@@ -40,7 +40,7 @@ def add_product():
     for i in stock:
         print(i)
         
-    time.sleep(5)
+    time.sleep(3)
     os.system('cls')
     return menu()
 
@@ -81,9 +81,41 @@ def search_product():
     else:
         print(f'\nThe product "{search}" was not found')
 
-    time.sleep(5)
+    time.sleep(3)
     menu()
 
+def delete_product():
+    os.system('cls')
+    time.sleep(1)
+    
+    print('Type the name of the product you want to delete or click "L" to leave')
+    delete = input('--> ')
+    
+    null_field(delete)
+    leave_to_menu(delete)
+
+    found_product = None
+
+    for product in stock:
+        if product._product.lower() == delete.lower():
+            found_product = product
+            break
+
+    if found_product:
+        stock.remove(found_product)
+        print(f'The product "{delete}" was deleted.')
+    else:
+        print(f'The product "{delete}" was not found in the stock.')
+    
+    time.sleep(3)
+    menu()
+    
+def shutdown():
+    while True:
+        os.system('cls')
+        print('Turning off...')
+        time.sleep(3)
+        break
 
 stock = []
 
