@@ -24,5 +24,5 @@ This project is a simple system of inventory management.
 
 ## Requeriments
 
-Modern IDE and/or a Terminal
+Modern IDE and/or a Terminal <br>
 Python installed
