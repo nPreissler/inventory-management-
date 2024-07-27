@@ -16,35 +16,77 @@ from models.product import Product
 import os
 import time
 
-def null_field(input_value):
-    if input_value == '':
-        os.system('cls')
-        print('This field cannot be null')
-        time.sleep(3)
-        return menu()
 
 def add_product():
     os.system('cls')
     time.sleep(1)
+    
     print('To go back to menu click "L"\n')
     name = input('--> ')
-    null_field(name) 
-    if name == 'l' or name == 'l':
-        menu()
+    
+    null_field(name)
+    leave_to_menu(name)
+    
     quantity = input('Quantity you want add: ')
     null_field(quantity)
+    
     product = Product(name, quantity, '0')
     stock.append(product)
+    
     os.system('cls')
+
     print('Now the product(s) is in the stock:\n ')
     time.sleep(1)
     for i in stock:
         print(i)
-    time.sleep(10)
+        
+    time.sleep(5)
     os.system('cls')
-    return add_product()
+    return menu()
+
+def leave_to_menu(input_value):
+    if input_value == 'l' or input_value == 'L':
+        os.system('cls')
+        time.sleep(1)
+        menu()
+
+def null_field(input_value):
+    if input_value == '':
+        os.system('cls')
+        
+        print('This field cannot be null')
+        
+        time.sleep(3)
+        return menu()
+
+def search_product():
+    os.system('cls')
+    time.sleep(1)
+    
+    print('Search for products or type "L" to back to menu \n')
+    search = input('--> ')
+    
+    null_field(search)
+    leave_to_menu(search)
+    
+    found_product = None
+
+    for product in stock:
+        if product._product.lower() == search.lower():
+            found_product = product
+            break
+
+    if found_product:
+        print(f'\nThe product "{search}" was found:\n{found_product}')
+    else:
+        print(f'\nThe product "{search}" was not found')
+
+    time.sleep(5)
+    menu()
+
 
 stock = []
+
 
 def menu():
     os.system('cls')
@@ -53,7 +95,9 @@ def menu():
     print('2 - Search for products')
     print('3 - Delete products')
     print('4 - End application\n')
+    
     option = input('--> ')
+    
     match option:
         case '1':
             add_product()
